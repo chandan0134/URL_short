@@ -1,0 +1,26 @@
+{
+  "name": "url_shorten",
+  "version": "1.0.0",
+  "description": "url shortener",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chandan0134/URL_shortner.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chandan0134/URL_shortner/issues"
+  },
+  "homepage": "https://github.com/chandan0134/URL_shortner#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^8.1.1",
+    "nanoid": "^5.0.5",
+    "shortid": "^2.2.16",
+    "uuid": "^9.0.1"
+  }
+}

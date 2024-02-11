@@ -1,14 +1,17 @@
-// index.js
-const express = require('express');
+const express = require("express");
 const { connectToMongoDB } = require("./connect");
-const urlRoute = require("./routes/url");
+const urlRoute = require("./routes/url"); // Corrected import statement
 
 const app = express();
-const port = 8001;
+const port = 3000;
+
+connectToMongoDB("mongodb://127.0.0.1:27017/shorturl").then(() => {
+    console.log("connected to db");
+});
 
 app.use(express.json());
+app.use("/url", urlRoute); // Corrected usage of the router
 
-connectToMongoDB('mongodb://127.0.0.1:27017/short-url').then(() => {
-    app.use("/url", urlRoute);
-    app.listen(port, () => console.log(`Server started on port:${port}`));
+app.listen(port, () => {
+    console.log("Server created");
 });

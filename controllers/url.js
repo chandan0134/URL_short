@@ -14,11 +14,14 @@ async function handleShortUrl(req, res) {
   newUrl
     .save()
     .then((item) => {
-      res.json({ status: "item saved to database" });
+       return res.render("home",{
+       id: shortId
+    })
     })
     .catch((err) => {
       res.status(400).send("unable to save to database");
     });
+   
 }
 
 module.exports = {

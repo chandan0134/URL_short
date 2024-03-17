@@ -4,6 +4,7 @@ const staticRouter=require("./routes/staticRouter")
 const { connectToMongoDB } = require("./connect");
 const urlRoute = require("./routes/url");
 const UrlModel = require("./models/url");
+const userRouter = require("./routes/user");
 
 const app = express();
 const port = 3000;
@@ -27,7 +28,7 @@ app.get("/test", async (req, res) => {
 
 app.use("/url", urlRoute);
 app.use("/",staticRouter);
-
+app.use("/user",userRouter);
 
 
 
